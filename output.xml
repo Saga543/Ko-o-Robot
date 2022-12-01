@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.7 on win32)" generated="20221201 17:12:45.471" rpa="false" schemaversion="3">
+<suite id="s1" name="Koło" source="C:\Users\Home\Desktop\koło">
+<suite id="s1-s1" name="Test" source="C:\Users\Home\Desktop\koło\test.robot">
+<test id="s1-s1-t1" name="Complete Form" line="64">
+<kw name="Open App">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221201 17:12:46.318" endtime="20221201 17:12:46.319"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221201 17:12:46.319" level="INFO">Opening browser 'chrome' to base url 'https://www.techlistic.com/p/selenium-practice-form.html'.</msg>
+<status status="PASS" starttime="20221201 17:12:46.319" endtime="20221201 17:12:51.074"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221201 17:12:51.074" endtime="20221201 17:12:51.317"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:46.317" endtime="20221201 17:12:51.318"/>
+</kw>
+<kw name="Close Cookies">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${COOKIE_BUTTON}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221201 17:12:51.319" endtime="20221201 17:12:51.376"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COOKIE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221201 17:12:51.377" level="INFO">Clicking element 'id: ez-accept-all'.</msg>
+<status status="PASS" starttime="20221201 17:12:51.376" endtime="20221201 17:12:51.615"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:51.318" endtime="20221201 17:12:51.616"/>
+</kw>
+<kw name="Set User Name And Last Name">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>abc</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221201 17:12:51.617" level="INFO">Typing text 'abc' into text field 'xpath: //*[@name="firstname"]'.</msg>
+<status status="PASS" starttime="20221201 17:12:51.616" endtime="20221201 17:12:51.826"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LAST_NAME_FIELD}</arg>
+<arg>wer</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221201 17:12:51.827" level="INFO">Typing text 'wer' into text field 'xpath: //*[@name="lastname"]'.</msg>
+<status status="PASS" starttime="20221201 17:12:51.826" endtime="20221201 17:12:52.062"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:51.616" endtime="20221201 17:12:52.062"/>
+</kw>
+<kw name="Choose Gender">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${genders}</var>
+<arg>${GENDER}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221201 17:12:52.091" level="INFO">${genders} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="70b714bc949c5b14af57a90c232ea9fa", element="9ea3bc37-6bd1-477c-9fa8-67ee2f308330")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20221201 17:12:52.063" endtime="20221201 17:12:52.091"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_element}</var>
+<arg>random.choice($genders)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221201 17:12:52.099" level="INFO">${random_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="70b714bc949c5b14af57a90c232ea9fa", element="0acdf012-a113-4337-8c12-a9715806d988")&gt;</msg>
+<status status="PASS" starttime="20221201 17:12:52.091" endtime="20221201 17:12:52.099"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${random_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221201 17:12:52.100" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="70b714bc949c5b14af57a90c232ea9fa", element="0acdf012-a113-4337-8c12-a9715806d988")&gt;'.</msg>
+<status status="PASS" starttime="20221201 17:12:52.099" endtime="20221201 17:12:52.171"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:52.062" endtime="20221201 17:12:52.171"/>
+</kw>
+<kw name="Choose Experience">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${exp}</var>
+<arg>${EXP}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221201 17:12:52.193" level="INFO">${exp} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="70b714bc949c5b14af57a90c232ea9fa", element="d83a75f4-fe18-4241-a49c-5f4d76a5591f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20221201 17:12:52.172" endtime="20221201 17:12:52.193"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_element}</var>
+<arg>random.choice($exp)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221201 17:12:52.194" level="INFO">${random_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="70b714bc949c5b14af57a90c232ea9fa", element="1ef85238-7b50-448f-bb8f-472d3e73970a")&gt;</msg>
+<status status="PASS" starttime="20221201 17:12:52.193" endtime="20221201 17:12:52.194"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${random_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221201 17:12:52.195" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="70b714bc949c5b14af57a90c232ea9fa", element="1ef85238-7b50-448f-bb8f-472d3e73970a")&gt;'.</msg>
+<status status="PASS" starttime="20221201 17:12:52.194" endtime="20221201 17:12:52.299"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:52.171" endtime="20221201 17:12:52.299"/>
+</kw>
+<kw name="Choose Continent">
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${CONTINENTS}</arg>
+<arg>3</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20221201 17:12:52.302" level="INFO">Selecting options from selection list 'id: continents' by index 3.</msg>
+<status status="PASS" starttime="20221201 17:12:52.300" endtime="20221201 17:12:52.853"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:52.299" endtime="20221201 17:12:52.854"/>
+</kw>
+<kw name="Add Image">
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>${UPLOAD_IMAGE}</arg>
+<arg>C:/Users/Home/Desktop/koło/pobrane.png</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20221201 17:12:52.857" level="INFO">Sending C:\Users\Home\Desktop\koło\pobrane.png to browser.</msg>
+<status status="PASS" starttime="20221201 17:12:52.855" endtime="20221201 17:12:52.935"/>
+</kw>
+<status status="PASS" starttime="20221201 17:12:52.854" endtime="20221201 17:12:52.936"/>
+</kw>
+<kw name="Check If Button Is Disabled">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Element Should Be Disabled</arg>
+<arg>${BUTTON}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<arg>${BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<msg timestamp="20221201 17:12:53.204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-3.png"&gt;&lt;img src="screenshots/selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221201 17:12:53.205" level="FAIL">Element 'id: submit' is enabled.</msg>
+<status status="FAIL" starttime="20221201 17:12:52.937" endtime="20221201 17:12:53.207"/>
+</kw>
+<msg timestamp="20221201 17:12:53.207" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20221201 17:12:52.936" endtime="20221201 17:12:53.207"/>
+</kw>
+<if>
+<branch type="IF" condition="${status} == False">
+<kw name="Fail" library="BuiltIn">
+<arg>BUTTON should be diabled !</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20221201 17:12:53.208" level="FAIL">BUTTON should be diabled !</msg>
+<status status="FAIL" starttime="20221201 17:12:53.207" endtime="20221201 17:12:53.208"/>
+</kw>
+<status status="FAIL" starttime="20221201 17:12:53.207" endtime="20221201 17:12:53.208"/>
+</branch>
+<status status="FAIL" starttime="20221201 17:12:53.207" endtime="20221201 17:12:53.208"/>
+</if>
+<status status="FAIL" starttime="20221201 17:12:52.936" endtime="20221201 17:12:53.208"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>200</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221201 17:12:53.208" endtime="20221201 17:12:53.208"/>
+</kw>
+<status status="FAIL" starttime="20221201 17:12:46.316" endtime="20221201 17:12:53.209">BUTTON should be diabled !</status>
+</test>
+<doc>Test presentation</doc>
+<status status="FAIL" starttime="20221201 17:12:45.520" endtime="20221201 17:12:53.209"/>
+</suite>
+<status status="FAIL" starttime="20221201 17:12:45.477" endtime="20221201 17:12:53.211"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Koło">Koło</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test">Koło.Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
